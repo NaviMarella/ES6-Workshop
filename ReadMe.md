@@ -10,10 +10,10 @@ This repo is meant to be used in parallel with a lecture style presentation of
 
 ## System Requirements
 
-- [git][git]
-- [Node][node] (at least version 6)
-- [yarn][yarn] (at least version 0.17.0)
+- [git]
+- [Node](at least version 6)
+- [yarn](at least version 0.17.0)
 
 ## Thanks
 
-Special thanks to [Kent C Dodds](https://twitter.com/kentcdodds)  from which this is forked.
+Special thanks to [Kent C Dodds](https://twitter.com/kentcdodds) and [Wes Bos](https://twitter.com/wesbos).
