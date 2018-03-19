@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Strings!</title>
+</head>
+<body>
+<script>
+ // Simple String Interpolation 
+  const name = 'Navi';
+  const num = 2;
+  const sentence = `${Navi} needs ${num} chocolates`; // ES5 way sentence = name + 'needs' + num + 'Chocolates'
+  console.log(sentence);
+
+// Template String render functions
+    const keywords = ['map1', 'reduce1', 'filter1']
+    function renderKeywords(keywords) {
+        return `
+        <ul>
+            ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+        </ul>
+        `;
+    }
+
+// Template strings if loop
+    const name = "Navi" || 'Bob';
+    const isExpected = true;
+    const text =  `${ isExpected ? `My Name is ${name}` : ''}`;
+
+</script>
+</body>
+</html>

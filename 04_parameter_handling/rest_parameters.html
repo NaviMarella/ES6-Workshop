@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The ...Rest Param</title>
+</head>
+<body>
+<script>
+  const Scores = ['Navi', 121829, 10,20, 50,80,70,100];
+  const [name, id, ...results] = Scores;
+  console.log(name, id, results);
+
+  const team = ['Wes', 'Kait', 'Lux', 'Sheena', 'Kelly'];
+  const [captain, assistant, ...players] = team;
+  console.log(captain, assistant, players)
+
+
+  //ES5 Way
+
+  function Sum (x, y) {
+    var a = Array.prototype.slice.call(arguments, 2); // Take the length of other aguments and multiply with the sum of first 2 nos
+        return (x + y) * a.length;
+  };
+ console.log(Sum(1, 2, "hello", true, 7))
+
+ //ES6 Way
+
+ function Sum (x, y, ...a) {
+   // Take the length of other aguments and multiply with the sum of first 2 nos
+        return (x + y) * a.length;
+ };
+ console.log(Sum(1, 2, "hello", true, 7))
+
+</script>
+</body>
+</html>
