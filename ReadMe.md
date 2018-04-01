@@ -14,6 +14,10 @@ This repo is meant to be used in parallel with a lecture style presentation of
 - [Node](at least version 6)
 - [yarn](at least version 0.17.0)
 
+## Slides for this workshop
+
+[Es6 Workshop slides](https://slides.com/navimarella/es6-workshop#/)
+
 ## Thanks
 
 Special thanks to [Kent C Dodds](https://twitter.com/kentcdodds) and [Wes Bos](https://twitter.com/wesbos).
