@@ -12,9 +12,36 @@
     Promise.all
     Promise.race
 
+
+    Useful Links:-
+          https://github.com/sindresorhus/promise-fun
+          
+
  */
 
  // callback samples
+
+var users = ['Naveen', 'Brad', 'Sam'];
+
+function addUser(username){
+  setTimeout(() => {
+    users.push(username);
+  }, 200)
+}
+
+function getUsers(){
+  setTimeout(() => {
+    console.log(users);
+  }, 100)
+}
+
+// First add user to the database
+addUser('Jim')
+
+//TODO: pass getUsers as a callback toaddUser function
+//Second get updated list of users
+getUsers()
+
 
  const request = require(‘request’);
  request('https://www.somepage.com', function (error, response, body) {
