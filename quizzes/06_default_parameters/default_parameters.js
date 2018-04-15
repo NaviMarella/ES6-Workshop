@@ -4,9 +4,7 @@ function basicDefaultParam() {
       randGen(4),
       randGen(0),
     ]
-    function randGen(n) {
-      // refactor with default parameter to handle n = undefined
-      n = n || 10
+    function randGen(n = 10) {
   
       return Math.floor(n * Math.random())
     }
@@ -16,47 +14,18 @@ function basicDefaultParam() {
   function defaultParamsAsExpressions() {
     return getCandy('twix', 'king')
   
-    function getCandy(kind, size, upperKind, callback) {
-      requiredParam('kind', kind)
-      requiredParam('size', size)
-      upperKind = upperKind === undefined ? kind.toUpperCase() : upperKind
-      callback = callback === undefined ? function noop() {} : callback
-  
+    function getCandy({
+      kind =  () => { throw new Error(`${argName} is required` )} ,
+      size =  () => { throw new Error(`${argName} is required` )},
+      upperKind = kind.toUpperCase(),
+      callback = function noop() {}
+    }) {  
       const result = {kind, size, upperKind}
       callback(result)
       return result
     }
-  
-    function requiredParam(argName, arg) {
-      if (arg === undefined) {
-        throw new Error(`${argName} is required`)
-      }
-    }
   }
   // console.log(defaultParamsAsExpressions())
-  
-  function restParams() {
-    const availableCities = [
-      {city: 'London', temp: 50.1},
-      {city: 'Bali', temp: 62.3},
-      {city: 'Buenos Aires', temp: 89.8},
-      {city: 'San Diego', temp: 58.1},
-    ]
-    return weatherOnDemand(availableCities, 'Bali', 'London')
-  
-    function weatherOnDemand() {
-      // Use default parameters, argument destructuring
-      // and other Array methods, to refactor this
-      const allArgs = Array.prototype.slice.call(arguments)
-      const weatherArray = allArgs[0]
-      const cities = allArgs.slice(1)
-  
-      return weatherArray.filter(cityData => {
-        return cities.indexOf(cityData.city) !== -1
-      })
-    }
-  }
-  // console.log(restParams())
   
   function destructureWithDefaultParams() {
     return [
@@ -93,7 +62,7 @@ function basicDefaultParam() {
   
   
   
-  
+   
   
   
   
@@ -141,23 +110,6 @@ function basicDefaultParam() {
     }
   }
   // log(defaultParamsAsExpressionsSOLUTION())
-  
-  function restParamsSOLUTION() {
-    const availableCities = [
-      {city: 'London', temp: 50.1},
-      {city: 'Bali', temp: 62.3},
-      {city: 'Buenos Aires', temp: 89.8},
-      {city: 'San Diego', temp: 58.1},
-    ]
-    return weatherOnDemand(availableCities, 'Bali', 'London')
-  
-    function weatherOnDemand(weatherArray, ...cities) {
-      return weatherArray.filter(cityData => {
-        return cities.indexOf(cityData.city) !== -1
-      })
-    }
-  }
-  // log(restParamsSOLUTION())
   
   function destructureWithDefaultParamsSOLUTION() {
     return [

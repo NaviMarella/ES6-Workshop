@@ -29,7 +29,7 @@ Object.assign(Point, { origin: new Point(0,0) })
 function stringIncludes() {
     // refactor to String.includes
     const phrase = `Let's learn javascript`;
-    return phrase.indexOf('the') !== -1
+    return phrase.includes('learn')  // Check for Case sensitive after refactoring
   }
   // console.log(stringIncludes())
 
@@ -38,15 +38,15 @@ function stringIncludes() {
 function objectAssign() {
     // what will this return?
     const target = {
-        a: 10,
+        a: '10 from target',
         b: {
-            c: 30
+            c: '30 from target'
         },
-        d: 45
+        d: '45 from target'
     }
    
-    const object1 = {a:20}
-    const object2 = {e: 56, b: { c: 120}}
+    const object1 = {a: '20 from object1'}
+    const object2 = {e: '56 from object2', b: { c: '120 from object2'}}
     Object.assign(target, object1, object2, object3)
     return target
   }
@@ -57,7 +57,7 @@ function objectAssign() {
       const obj = {
           0: 'navi',
           1: 'tom',
-          2: 'brad'
+          2: 'brad',   // Also this is a comma dangles
       }
 
       return Object.values(obj);

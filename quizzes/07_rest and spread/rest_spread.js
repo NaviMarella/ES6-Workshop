@@ -11,6 +11,13 @@ function spreadFunctionCall() {
     // arr can be typically like this: [8, 9, [6, [5, [7], [45, 34, [2]]]]]
     // output shold be [8, 9, 6, 5, 7, 45, 34, 2]
     // use spread operator in place of Array.prototype.concat()
+
+    var a = [10,20,30,40]
+    var b = [35,45,65]
+
+    var result = [ ...a, ...b]
+
+
     const arr = [8, 9, [6, [5, [7], [45, 34, [[[2]]], [[[[[[[[7]]]]], 90]]]]]]]
     return flatter(arr)
   
@@ -47,6 +54,16 @@ function spreadFunctionCall() {
     return Object.assign({}, obj1, obj2)
   }
   // console.log(mergeObjects())
+
+  var x = {a : 10}
+  var b = { a: 20, c: 30, z: { w: 30} } 
+
+  Object.assign({},{
+    a: 20, c: 30, z: { w: 30},
+    z: {
+      w: 45
+    }
+  } )
   
   function spreadString() {
     return join('--', 'PayPal')
@@ -64,8 +81,48 @@ function spreadFunctionCall() {
     return splitGreeting
   }
   // console.log(restString())
+
+
+/*
+    // Before rest parameters, the following could be found:
+  function f(a, b) {
+    var args = Array.prototype.slice.call(arguments, f.length);
+
+    // …
+  }
+
+  // to be equivalent of
+
+  function f(a, b, ...args) {
+    
+  }
+  */
+
+  function sum(...theArgs) {
+    return theArgs.reduce((previous, current) => {
+      return previous + current;
+    });
+  }
+
+  // console.log(sum(1,2))
+  // console.log(sum(1,2,3,4))
+
+  function multiply(multiplier, ...theArgs) {
+    return theArgs.map(function(element) {
+      return multiplier * element;
+    });
+  }
+
+ //console.log(multiply(2, 1, 2, 3));
   
-  
+
+ function f(...[a, b, c]) {
+  return a + b + c;
+}
+
+f(1)          // what is the output?? Hint undefined + something = undefined
+f(1, 2, 3)    // what is the output??
+f(1, 2, 3, 4) // what is the output?? (the fourth parameter is not destructured)
   
   
   
@@ -130,4 +187,11 @@ function spreadFunctionCall() {
       ...obj1,
       ...obj2,
     }
+  }
+
+
+
+
+  function sum(...props){
+    // using arguments
   }

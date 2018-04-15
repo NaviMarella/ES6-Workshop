@@ -6,7 +6,6 @@ This is unlike the var keyword, which defines a variable globally, or locally to
 */
 function getX(){
     let x = 1;
-
     if (x === 1) {
     let x = 2;
 
@@ -15,20 +14,23 @@ function getX(){
     console.log(x);
 }
 
-getX();
+console.log(getX());
 
 //More examples  --- Variable Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 function setHeight(){
   console.log("Outside block --- height is "+ height);
   if(true){
-    var height = 100;
+    let height = 100;
     console.log("Inside block --- height is "+ height);
   }
 }
+
+console.log(setHeight());
+
 // Pitfalls in let --- Temporal Dead Zone and errors with let
 
-if (x) {
+if (true) {
     let foo;
     let foo; // SyntaxError thrown.
 }

@@ -20,6 +20,8 @@
 // 5. how could we import `add` (default) and
 // `theQuestion` with a single import declaration?
 
+/// Are these imports mutable or immutable ???
+
 // 6. how could we avoid the default alias when
 // importing `add` and `theQuestion`?
 

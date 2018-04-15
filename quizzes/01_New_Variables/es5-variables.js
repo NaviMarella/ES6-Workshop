@@ -9,24 +9,34 @@ Var is used to define a variable and it's scope is limited to function scope.
 var setWidth = function() {
     var width = 100;
     console.log(width);
-  }
-  setWidth();
+}
+
+var width = 100;
+
+//console.log(setWidth());
+
+function getAge(){
   var age = 100;
   if(age > 12) {
     var years = age * 7;
     console.log(`You are ${years} years old!`);
   }
+}
 
+//console.log(getAge());
+  
 
   //More examples  --- Variable Hoisting is JavaScript's default behavior of moving declarations to the top.
 
   function setHeight(){
       console.log("Outside block --- height is "+ height);
       if(true){
-        var height = 100;
+        //var height = 100;
         console.log("Inside block --- height is "+ height);
       }
   }
+
+  console.log(setHeight())
 
    // How do we acheive block scoping in ES5
    /*
@@ -37,9 +47,13 @@ var setWidth = function() {
     Any variable that would be block scoped (e.g. via let) would become a parameter of the function and initial values would be passed as arguments.
     */
     var callbacks = [];
-    for (var i = 0; i <= 2; i++) {
-        (function (i) {
+    for (let i = 0; i <= 2; i++) {
+      // (function (i) {
             callbacks[i] = function() { return i * 2; };
-        })(i);
+       // })(i);
     }
+
+    
+
+    console.log(callbacks[0]())
    

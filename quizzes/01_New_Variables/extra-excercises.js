@@ -4,7 +4,7 @@ function basic() {
     const y = 200
     return {x: x, y: y}
   }
-  // console.log(basic())
+console.log(basic())
   
   function immutable() {
     // what is returned?
@@ -40,8 +40,9 @@ function basic() {
     { // this is called a "block"
       const x = 42
       let y = 24
+      console.log(x, y)
     }
-    return {x: x, y: y}
+    console.log(x);
   }
   //console.log(block())
   

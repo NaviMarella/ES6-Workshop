@@ -20,58 +20,46 @@
 
 function multiArgument() {
     // refactor to an arrow function
-    const divide = function(a, b) {
-      return a / b
-    }
+    const divide = a =>  { return a *2 }
     return divide(40, 10)
   }
   // console.log(multiArgument())
   
   function noArgument() {
     // refactor to an arrow function
-    const getFive = function() {
-      return 5
-    }
+    const getFive = () => 5
     return getFive()
   }
   // console.log(noArgument())
   
   function singleArgument() {
     // refactor to an arrow function
-    const identity = function(i) {
-      return i
-    }
+    const identity = i => i;
     return identity(350)
   }
   // console.log(singleArgument())
   
   function spreadWithArrow() {
     // refactor to an arrow function
-    const asArray = function(...args) {
-      return args
-    }
+    const asArray = (...args) => args
     return asArray(1, 2, 3, 4)
   }
   // console.log(spreadWithArrow())
   
   function withObject() {
     // refactor to an arrow function
-    const getObject = function(favoriteCandy) {
-      return {favoriteCandy}
-    }
+    const getObject = (favoriteCandy) => ({ a: 10})
     return getObject('twix')
   }
   // console.log(withObject())
   
   function withMultiLineExpression() {
-    const getString = function(name) {
-      return (
+    const getString = (name)  => (
         `
           Hello there ${name}
           How are you doing today?
         `
       )
-    }
     return getString('Ryan')
   }
   // console.log(withMultiLineExpression())
@@ -79,14 +67,8 @@ function multiArgument() {
   function curryAdd() {
     // refactor to a arrow functions
     return curryAddition(9)(3)(5)
-  
-    function curryAddition(a) {
-      return function(b) {
-        return function(c) {
-          return a + b + c
-        }
-      }
-    }
+
+    curryAddition = a => b => c => a+b+c
   }
   // console.log(curryAdd())
   
@@ -108,6 +90,15 @@ function multiArgument() {
     return population.display()
   }
   // console.log(context())
+
+
+  function getSum(){ 
+    var x = 10;
+    this // function scope
+     setTimeout( () => {
+        console.log(self.x)
+     }, 100)
+  }
   
   function noBind() {
     // what will this function return?
