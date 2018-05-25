@@ -86,10 +86,10 @@ var result = [1,2,3,4].map(sqaure)
 //Asynchronous here means that, if JavaScript needs to wait for something to complete, it will execute the rest of the tasks given to it while waiting.
 
 console.log("before set timeout"+ Date.now());
-
-setTimeout(function() {
+var callback = function() {
     alert('Hello World!');
-}, 500);
+}
+setTimeout(callback, 500);
 
 console.log("After set timeout"+ Date.now());
 
@@ -102,10 +102,5 @@ $.ajax('some-url', {
   });
 
   // Fetch api to make ajax calls
-var request = new Request('https://website-name/some-url', {
-	headers: new Headers({
-		'Content-Type': 'text/plain'
-	})
-});
 
-fetch(request).then(function() { /* handle response */ });
+fetch('url').then(function() { /* handle response */ });

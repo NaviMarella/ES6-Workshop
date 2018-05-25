@@ -24,7 +24,7 @@ function* generator () {
   }
 
   //Convert the previous callback example to generators
-
+ //convert to async await
   function *getUsers(){
     var URL="http://localhost:3000";
     var country = yield fetch(url+'/olympic/2016/tennis/ranking/4');
